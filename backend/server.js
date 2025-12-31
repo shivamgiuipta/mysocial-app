@@ -1,7 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const mongoose = require('mongoose'); // ✅ FIXED
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 
 dotenv.config();
 
@@ -18,12 +18,12 @@ mongoose
   .catch((err) => console.error("MongoDB Error:", err));
 
 // Routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/posts', require('./routes/posts'));
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/posts", require("./routes/posts"));
 
 // Health check
-app.get('/', (req, res) => {
-  res.json({ message: 'MySocial API is running' });
+app.get("/", (req, res) => {
+  res.json({ message: "MySocial API is running" });
 });
 
 const PORT = process.env.PORT || 10000;
