@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose'); // ✅ FIXED
 
 dotenv.config();
 
@@ -25,7 +26,7 @@ app.get('/', (req, res) => {
   res.json({ message: 'MySocial API is running' });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
