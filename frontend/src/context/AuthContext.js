@@ -9,15 +9,19 @@ export const AuthProvider = ({ children }) => {
   const API_URL = "https://mysocial-app-zltd.onrender.com/api";
 
   const register = async (username, email, password) => {
-  const res = await api.post("/auth/register", {
-    username,
-    email,
-    password,
-  });
-  return res.data;
-};
+    console.log("REGISTER API CALL"); // 👈 IMPORTANT
 
+    const response = await axios.post(
+      `${API_URL}/auth/register`,
+      { username, email, password },
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
 
+    return response.data;
+  };
+  
 
   return (
     <AuthContext.Provider value={{ user, register }}>
