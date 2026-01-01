@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   const API_URL = "https://mysocial-app-zltd.onrender.com/api";
 
   const register = async (username, email, password) => {
-    console.log("REGISTER API CALL"); // 👈 IMPORTANT
+    console.log("REGISTER API CALL"); 
 
     const response = await axios.post(
       `${API_URL}/auth/register`,
